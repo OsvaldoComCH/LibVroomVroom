@@ -23,18 +23,22 @@ void QuickerSortV2(int * A, int Size)
     }
     
     Pivot = *x;
-    for(; y < &A[Size]; ++y)
+    if(y < &A[Size])
     {
-        if(*y < Pivot)
+        do
         {
-            ++x;
-            int Temp = *x;
-            *x = *y;
-            *y = Temp;
-        }
+            if(*y < Pivot)
+            {
+                ++x;
+                int Temp = *x;
+                *x = *y;
+                *y = Temp;
+            }
+            ++y;
+        }while(y < &A[Size]);
+        *A = *x;
+        *x = Pivot;
     }
-    *A = *x;
-    *x = Pivot;
     QuickerSortV2(A, (x - A));
     QuickerSortV2(x + 1, (&A[Size] - x - 1));
 }
