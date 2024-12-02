@@ -1,4 +1,4 @@
-_Z13QuickerSortV2Pii:
+_Z11QuickerSortPii:
     pushl   %ebp
     pushl   %edi
     pushl   %esi
@@ -22,7 +22,7 @@ _Z13QuickerSortV2Pii:
     pushl   %eax
     sarl    $2, %ebx
     pushl   %ecx
-    call    _Z13QuickerSortV2Pii
+    call    _Z11QuickerSortPii
     leal    -1(%ebx), %eax
     leal    4(%edi), %ecx
     addl    $16, %esp

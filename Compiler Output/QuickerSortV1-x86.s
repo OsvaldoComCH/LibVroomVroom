@@ -3,10 +3,10 @@ _Z11QuickerSortPiii:
     pushl   %edi
     pushl   %esi
     pushl   %ebx
-    subl    $28, %esp   ## 7 variables
-    movl    52(%esp), %edi  ## Start
-    movl    48(%esp), %ebp  ## A
-    movl    56(%esp), %eax  ## End
+    subl    $28, %esp
+    movl    52(%esp), %edi
+    movl    48(%esp), %ebp
+    movl    56(%esp), %eax
     movl    56(%esp), %esi
     leal    1(%edi), %ebx
     leal    4(%ebp,%esi,4), %esi

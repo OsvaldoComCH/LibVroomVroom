@@ -1,7 +1,7 @@
 #ifndef QUICKERSORT_H
 #define QUICKERSORT_H
 
-void QuickerSortV2(int * A, int Size)
+void QuickerSort(int * A, int Size)
 {
     int Pivot;
     int * x = A;
@@ -22,9 +22,9 @@ void QuickerSortV2(int * A, int Size)
         return;
     }
     
-    Pivot = *x;
     if(y < &A[Size])
     {
+        Pivot = *x;
         do
         {
             if(*y < Pivot)
@@ -39,8 +39,8 @@ void QuickerSortV2(int * A, int Size)
         *A = *x;
         *x = Pivot;
     }
-    QuickerSortV2(A, (x - A));
-    QuickerSortV2(x + 1, (&A[Size] - x - 1));
+    QuickerSort(A, (x - A));
+    QuickerSort(x + 1, (&A[Size] - x - 1));
 }
 
 #endif
