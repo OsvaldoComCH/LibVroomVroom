@@ -24,7 +24,7 @@ _Z11QuickerSortPii:
     pushl   %ecx    ## push %ecx
     call    _Z11QuickerSortPii
     leal    -1(%ebx), %eax  ## %eax = %ebx - 1
-    leal    4(%edi), %ecx   ## %ecx = x + 4
+    leal    4(%edi), %ecx   ## %ecx = x + 1
     addl    $16, %esp
     cmpl    $65, %eax   ## if(%eax > 65)
     jg      .L2
