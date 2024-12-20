@@ -4,17 +4,19 @@
 void QuickerSort(int * A, int Size)
 {
     int * ecx = A;
-    int * eax = (int *) Size;
-    int * esi = &ecx[1]; //y
+    int * eax = (int *)((long long)Size);
+    int * esi = &ecx[1];
+    int * edi;
+    int * ebx;
 
-    if((int)eax <= 65)
+    if((long long)eax <= 65)
     {
 
     }
     do
     {
-        int * ebx = &ecx[(int)eax];
-        int * edi = ecx;
+        ebx = &ecx[(long long)eax];
+        edi = ecx;
         eax = 0;
 
         if(esi < ebx)
@@ -25,11 +27,19 @@ void QuickerSort(int * A, int Size)
         ebx = (int *) (ebx - edi);
         esi = edi + 2;
         ebx = (int *) ((long long)ebx >> 2);
-        QuickerSort(ecx, (int)eax);
+        QuickerSort(ecx, (long long)eax);
 
         eax = (int *)((long long) ebx - 1);
         ecx = edi + 1;
-    }while((int)eax > 65);
+    }while((long long)eax > 65);
+
+    edi = &ecx[(long long)eax];
+    eax = ecx;
+    if(esi >= edi)
+    {
+        return;
+    }
+    ebx = (int *)((long long)*(esi));
 }
 
 #endif
