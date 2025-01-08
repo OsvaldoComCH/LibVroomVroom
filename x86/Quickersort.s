@@ -79,7 +79,7 @@ _Z11QuickerSortPii:
     movl    (%edi), %eax    ## %eax = *%edi
     movl    %eax, (%ecx)    ## *%ecx = %eax
     movl    %edi, %eax  ## %eax = %edi
-    subl    %ecx, %eax  ## %eax -= %eax
+    subl    %ecx, %eax  ## %eax -= %ecx
     movl    %edx, (%edi)    ## *%edi = %edx
     sarl    $2, %eax    ## %eax >>= 2
     jmp     .L8
